@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../normalize.css">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <script defer src="./script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Wordle</h1>
+        </header>
+        <section class="info">
+            <p>
+                Input the words using your keyboard, the column will turn green if the character is correct and is in the correct order, it will turn yellow if the character is correct but it is not in the correct order, and red if it is not correct. <b>This can only be played in a laptop or computer with a keyboard</b>
+            </p>
+            <p id="enter-key">
+                Enter a key...
+            </p>
+        </section>
+        <main id="main">
+            
+        </main>
+        <div class="complete">
+            <div id="win" class="win-info inactive">
+                <h3>
+                    You Win!
+                </h3>
+            </div>
+            <div id="lose" class="lose-info inactive">
+                <h3>
+                    You Lose!
+                </h3>
+            </div>
+            <p id="word" class="inactive">
+                The correct word is...
+            </p>
+            <button id="retry" class="button-main inactive">
+                Retry
+            </button>
+        </div>
+
+        <footer>
+            <p>Wordle mock by Kadek Fajar Pramartha Yasodana</p>
+        </footer>
+    </body>
+</html>
