@@ -12,7 +12,7 @@ var loadFinished = false;
 
 var currentStage = 0;
 const LOSE = 1;
-const WIN = 1;
+const WIN = 2;
 var rows = [];
 var currentRow;
 var choosenWord;

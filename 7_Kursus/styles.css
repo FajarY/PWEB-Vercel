@@ -1,0 +1,294 @@
+html
+{
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: black;
+    scroll-behavior: smooth;
+}
+
+nav
+{
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    background-color: black;
+    div
+    {
+        display: flex;
+        align-items: center;
+        transition: all ease-in-out 0.3s;
+        padding-inline: 8px;
+
+        height: 100%;
+
+        cursor: pointer;
+        h3
+        {
+            margin: 0px;
+            transition: all ease-in-out 0.3s;
+            color: white;
+
+            user-select: none;
+        }
+    }
+    div:hover
+    {
+        background-color: white;
+        h3
+        {
+            color: black;
+        }
+    }
+    img
+    {
+        margin-inline: 12px;
+
+        image-rendering: pixelated;
+        height: 60%;
+    }
+}
+
+main
+{
+
+}
+
+.home
+{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1, p
+    {
+        color: white;
+    }
+    h1
+    {
+        margin: 0px;
+    }
+    p
+    {
+        width: 60%;
+        text-align: center;
+    }
+    img
+    {
+        position: absolute;
+        z-index: -1;
+        object-fit: cover;
+
+        width: 100%;
+        height: inherit;
+
+        opacity: 0.5;
+        filter: blur(2px);
+    }
+}
+
+.course
+{
+    transition: all ease-in-out 0.3s;
+
+    height: fit-content;
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    aside
+    {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        margin-block: 16px;
+        border-right: double 5px grey;
+    }
+    section
+    {
+        margin-block: 16px;
+        background-color: white;
+
+        padding-inline: 16px;
+    }
+}
+.course-container
+{
+    h2
+    {
+        margin: 0px;
+        margin-bottom: 16px;
+    }
+    div
+    {
+        display: flex;
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+}
+.course-item
+{
+    border: solid 1px black;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0px;
+
+    transition: all ease-in-out 0.3s;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0);
+
+    width: 350px;
+
+    .course-item-header
+    {
+        background-color: rgb(115, 199, 241);
+        display: flex;
+        justify-content: center;
+        h3
+        {
+            color: white;
+            text-align: center;
+            margin: 0px;
+        }
+        padding: 12px;
+    }
+    .course-item-content
+    {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        img
+        {
+            height: 100px;
+            object-fit: contain;
+
+            border-radius: 4px;
+        }
+        p
+        {
+            width: 300px;
+            text-align: center;
+        }
+    }
+}
+.course-item:hover
+{
+    width: 400px;
+    transform-origin: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button-aside
+{
+    all: unset;
+    
+    font-weight: bold;
+
+    background-color: rgb(115, 199, 241);
+    color: white;
+
+    text-align: center;
+
+    width: 80%;
+    padding-block: 8px;
+    padding-inline: 16px;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease-in-out;
+
+    cursor: pointer;
+}
+.button-aside:hover
+{
+    background-color: black;
+    color: white;
+}
+.button-aside-choosed
+{
+    background-color: black;
+    color: white;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+footer
+{
+    height: 64px;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3
+    {
+        font-size: small;
+        color: white;
+    }
+}
+
+.button-main
+{
+    all: unset;
+    
+    font-weight: bold;
+
+    background-color: white;
+    color: black;
+    padding-block: 12px;
+    padding-inline: 16px;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease-in-out;
+
+    cursor: pointer;
+}
+.button-main:hover
+{
+    background-color: black;
+    color: white;
+}
+
+.button-second
+{
+    all: unset;
+    
+    font-weight: bold;
+
+    background-color: #5a9ee8;
+    color: white;
+    padding-block: 12px;
+    padding-inline: 16px;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease-in-out;
+
+    cursor: pointer;
+}
+.button-second:hover
+{
+    background-color: #74baf4;
+    color: white;
+}
+
+.inactive
+{
+    display: none;
+}

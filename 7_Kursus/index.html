@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../normalize.css">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <script defer src="./script.js"></script>
+    </head>
+    <body>
+        <nav>
+            <img src="./cryothink.png">
+            <div onclick="document.getElementById('home').scrollIntoView()">
+                <h3>
+                    Home
+                </h3>
+            </div>
+            <div onclick="document.getElementById('course').scrollIntoView()">
+                <h3>
+                    Course
+                </h3>
+            </div>
+        </nav>
+        <main>
+            <div id="home" class="home">
+                <img src="./homebackground.png">
+                <h1>Premium Course</h1>
+                <p>Cryothink offers top-of-the-market premium courses designed to elevate your skills and knowledge to the next level. Our courses are crafted by industry experts to ensure you receive the best education and training available.</p>
+                <button onclick="document.getElementById('course').scrollIntoView()" class="button-main">Learn More</button>
+            </div>
+            <div id="course" class="course">
+                <aside>
+                    <button id="button-offers" class="button-aside">Offsers</button>
+                    <button id="button-algo" class="button-aside">Algorithms</button>
+                    <button id="button-web" class="button-aside">Web</button>
+                    <button id="button-game" class="button-aside">Game</button>
+                </aside>
+                <section>
+                    <div id="course-main" class="course-container inactive">
+                        <h2>What we offer?</h2>
+                        <div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Algorithms</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./algorithms.jpeg">
+                                    <p>Our Algorithms course provides a comprehensive understanding of algorithmic principles and techniques.</p>
+                                    <button onclick="setActive(1)" class="button-second">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Web</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./web.jpg">
+                                    <p>Our Web Development course covers the essential skills needed to build modern, responsive websites.</p>
+                                    <button onclick="setActive(2)" class="button-second">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Game</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./game.jpg">
+                                    <p>Our Game Development course provides a comprehensive introduction to the world of game design and development.</p>
+                                    <button onclick="setActive(3)" class="button-second">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="course-algorithms" class="course-container inactive">
+                        <h2>Algorithms Courses</h2>
+                        <div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Basics</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./algorithms.jpeg">
+                                    <p>Our Basics course provides a solid foundation in fundamental algorithmic principles and techniques. You will learn essential concepts that are crucial for understanding more advanced topics in computer science.</p>
+                                    <button class="button-second">$2.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Data Structures</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./algorithms.jpeg">
+                                    <p>Our Data Structures course covers the essential skills needed to efficiently organize and manage data. You will learn about various data structures such as arrays, linked lists, stacks, queues, and trees, and how to implement them in real-world applications.</p>
+                                    <button class="button-second">$8.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Graph</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./algorithms.jpeg">
+                                    <p>Our Graph course provides a comprehensive introduction to graph theory and its applications. You will learn how to represent, traverse, and analyze graphs, and understand their importance in solving complex problems in computer science and related fields.</p>
+                                    <button class="button-second">$17.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header" style="background-color: red;">
+                                    <h3>Complete</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./algorithms.jpeg">
+                                    <p>Complete course from basics, data Structures, and graphs.</p>
+                                    <button class="button-second" style="background-color: red;">$20.99</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="course-web" class="course-container inactive">
+                        <h2>Web Development Courses</h2>
+                        <div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>HTML & CSS</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./web.jpg">
+                                    <p>Our HTML & CSS course provides a comprehensive introduction to web development. You will learn how to create and style web pages using HTML for structure and CSS for design, enabling you to build visually appealing and responsive websites.</p>
+                                    <button class="button-second">$2.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Node JS</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./web.jpg">
+                                    <p>Our Node JS course covers the essential skills needed to build scalable and efficient server-side applications. You will learn about asynchronous programming, working with databases, and creating RESTful APIs using Node.js and its powerful ecosystem.</p>
+                                    <button class="button-second">$8.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Deployment</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./web.jpg">
+                                    <p>Our Deployment course provides a comprehensive guide to deploying web applications. You will learn about various deployment strategies, tools, and platforms, ensuring your applications are reliable, scalable, and easy to maintain.</p>
+                                    <button class="button-second">$17.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Frameworks</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./web.jpg">
+                                    <p>Our Frameworks course introduces you to popular web development frameworks such as React, Angular, and Vue. You will learn how to leverage these frameworks to build dynamic, high-performance web applications with ease.</p>
+                                    <button class="button-second">$12.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header" style="background-color: red;">
+                                    <h3>Complete</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./web.jpg">
+                                    <p>Our Complete course offers an all-in-one package covering HTML & CSS, Node JS, Deployment, and Frameworks. This comprehensive course is designed to take you from beginner to advanced, equipping you with all the skills needed to become a proficient web developer.</p>
+                                    <button class="button-second" style="background-color: red;">$25.99</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="course-gamedevelopment" class="course-container inactive">
+                        <h2>Game Development Courses</h2>
+                        <div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Unity</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./game.jpg">
+                                    <p>Our Unity course provides a comprehensive introduction to game development using the Unity engine. You will learn how to create interactive 2D and 3D games, understand game physics, and implement game mechanics, equipping you with the skills to build your own games from scratch.</p>
+                                    <button class="button-second">$10.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Open GL</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./game.jpg">
+                                    <p>Our OpenGL course covers the essential skills needed to create high-performance graphics applications. You will learn about rendering pipelines, shaders, and advanced graphics techniques, enabling you to develop visually stunning applications and games.</p>
+                                    <button class="button-second">$20.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Shaders</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./game.jpg">
+                                    <p>Our Shaders course provides an in-depth understanding of shader programming. You will learn how to write vertex and fragment shaders, create complex visual effects, and optimize your shaders for performance, giving you the tools to enhance the visual quality of your applications.</p>
+                                    <button class="button-second">$8.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header">
+                                    <h3>Vulkan</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./game.jpg">
+                                    <p>Our Vulkan course introduces you to the Vulkan API, a modern graphics and compute API. You will learn how to set up Vulkan, manage resources, and implement advanced rendering techniques, providing you with the knowledge to develop high-performance graphics applications.</p>
+                                    <button class="button-second">$30.99</button>
+                                </div>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-item-header" style="background-color: red;">
+                                    <h3>Complete</h3>
+                                </div>
+                                <div class="course-item-content">
+                                    <img src="./game.jpg">
+                                    <p>Our Complete course offers an all-in-one package covering Unity, OpenGL, Shaders, and Vulkan. This comprehensive course is designed to take you from beginner to advanced, equipping you with all the skills needed to become a proficient game and graphics developer.</p>
+                                    <button class="button-second" style="background-color: red;">$40.99</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <h3>Made by Kadek Fajar Pramartha Yasodana</h3>
+        </footer>
+    </body>
+</html>
