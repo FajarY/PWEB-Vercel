@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./output.css">
+    </head>
+    <body class="w-full">
+        <div class="flex justify-center">
+            <div class="flex flex-col justify-center m-12 border p-8 rounded-xl shadow-md min-w-96 gap-2">
+                <h1 class="text-4xl text-center font-bold m-4 text-blue-400">FRS</h1>
+                <label for="mahasiswa" class="font-bold">Nama Mahasiswa</label>
+                <input type="text" oninput="listenInput(this.value)" name="mahasiswa" placeholder="Insert nama mahasiswa..." class="border rounded-md p-2">
+                <label id="suggestion-label" class="hidden">Suggestions</label>
+                <ul id="suggestion-container" class="border p-2 hidden">
+                </ul>
+                <label for="mahasiswa" class="font-bold">NIM</label>
+                <input type="text" name="mahasiswa" placeholder="Insert NIM..." class="border rounded-md p-2">
+                <label for="mahasiswa" class="font-bold">Mata Kuliah</label>
+                <input type="text" name="mahasiswa" placeholder="Insert mata Kuliah..." class="border rounded-md p-2">
+                <label for="mahasiswa" class="font-bold">Dosen</label>
+                <input type="text" name="mahasiswa" placeholder="Insert nama dosen..." class="border rounded-md p-2">
+                <button class="w-full bg-blue-300 rounded-xl p-4 mt-4 font-bold text-white hover:bg-blue-200 ease-in-out transition-all">Submit</button>
+            </div>
+        </div>
+    </body>
+    <script>
+    const suggestionLabel = document.getElementById('suggestion-label');
+    const suggestionContainer = document.getElementById('suggestion-container');
+
+    const db = [
+        'Kadek Fajar Pramartha Yasodana',
+        'Azka Rizqullah Ramadhani',
+        'Mathias Adya Dwiangkara Suganda',
+        'Afel Allaric Absor',
+        'Kadek Arya Deva Artana',
+        'Dewa Putu Ananda Taurean Mahesa',
+        'Randi Palguna Artayasa',
+        'Putu Ardanata Pratama',
+        'Praja Armika'
+    ];
+
+    function listenInput(value)
+    {
+        var suggestions = [];
+        const valueLower = value.toLowerCase();
+        if(value != '')
+        {
+            for(var i = 0; i < db.length; i++)
+            {
+                const current = db[i].toLowerCase();
+                var add = true;
+                for(var j = 0; j < value.length; j++)
+                {
+                    if(valueLower[j] != current[j])
+                    {
+                        add = false;
+                        break;
+                    }
+                }
+
+                if(add)
+                {
+                    suggestions.push(db[i]);
+                }
+            }
+        }
+        suggestionContainer.innerHTML = '';
+        for(var i = 0; i < suggestions.length; i++)
+        {
+            suggestionContainer.innerHTML += `<li>${suggestions[i]}</li>`;
+        }
+
+        if(value == '' || suggestions.length == 0)
+        {
+            if(!suggestionContainer.classList.contains('hidden'))
+            {
+                suggestionContainer.classList.add('hidden');
+            }
+            if(!suggestionLabel.classList.contains('hidden'))
+            {
+                suggestionLabel.classList.add('hidden');
+            }
+        }
+        else
+        {
+            if(suggestionContainer.classList.contains('hidden'))
+            {
+                suggestionContainer.classList.remove('hidden');
+            }
+            if(suggestionLabel.classList.contains('hidden'))
+            {
+                suggestionLabel.classList.remove('hidden');
+            }
+        }
+    }
+    </script>
+</html>

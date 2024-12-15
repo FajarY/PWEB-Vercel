@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./output.css">
+    </head>
+    <body class="w-full">
+        <div class="flex justify-center">
+            <div class="flex flex-col justify-center m-12 border p-8 rounded-xl shadow-md min-w-96 gap-2">
+                <h1 class="text-4xl text-center font-bold m-4 text-blue-400">Dynamic</h1>
+                <label for="provinsi" class="font-bold">Provinsi</label>
+                <select id="provinsi" name="provinsi" oninput="listenProvinsi(this.value)" class="border rounded-md p-2">
+                </select>
+                <label for="kota" class="font-bold">Kabupaten/Kota</label>
+                <select id="kota" name="kota" oninput="listenKota(this.value)" class="border rounded-md p-2">
+                </select>
+                <label for="kecamatan" class="font-bold">Kecamatan</label>
+                <select id="kecamatan" name="kecamatan" oninput="listenKecamatan(this.value)" class="border rounded-md p-2">
+                </select>
+                <button class="w-full bg-blue-300 rounded-xl p-4 mt-4 font-bold text-white hover:bg-blue-200 ease-in-out transition-all" onclick="submit()">Show</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        const provinsi = {
+            'Bali': [
+                'Denpasar',
+                'Gianyar',
+                'Singaraja',
+                'Tabanan'
+            ],
+            'Jawa Timur': [
+                'Surabaya'
+            ]
+        };
+        const kota = {
+            'Denpasar': [
+                'Denpasar Utara',
+                'Denpasar Barat',
+                'Denpasar Timur',
+                'Denpasar Selatan'
+            ],
+            'Surabaya': [
+                'Sukolilo'
+            ]
+        };
+        const kecamatan = {
+            'Denpasar Utara': '80236',
+            'Denpasar Barat': '80236',
+            'Denpasar Timur': '80236',
+            'Denpasar Selatan': '80236',
+            'Sukolilo': '99999'
+        };
+
+        const provinsiList = document.getElementById('provinsi');
+        const kotaList = document.getElementById('kota');
+        const kecamatanList = document.getElementById('kecamatan');
+
+        var query = '';
+
+        function initialize()
+        {
+            provinsiList.innerHTML = '<option value="">Pilih Kota</option>';
+            const keys = Object.keys(provinsi);
+            for(var i = 0; i < keys.length; i++)
+            {
+                provinsiList.innerHTML += `<option value="${keys[i]}">${keys[i]}</option>`;
+            }
+        }
+        initialize();
+        function listenProvinsi(value)
+        {
+            const check = provinsi[value];
+
+            kotaList.innerHTML = '';
+            kotaList.value = '';
+
+            kecamatanList.value = '';
+            kecamatanList.innerHTML = '';
+            if(check)
+            {
+                kotaList.innerHTML = '<option value="">Pilih Kota</option>';
+                for(var i = 0; i < check.length; i++)
+                {
+                    kotaList.innerHTML += `<option value="${check[i]}">${check[i]}</option>`;
+                }
+            }
+        }
+        function listenKota(value)
+        {
+            const check = kota[value];
+
+            kecamatanList.innerHTML = '';
+            kecamatanList.value = '';
+
+            if(check)
+            {
+                kecamatanList.innerHTML = '<option value="">Pilih Kecamatan</option>';
+                for(var i = 0; i < check.length; i++)
+                {
+                    kecamatanList.innerHTML += `<option value="${check[i]}">${check[i]}</option>`;
+                }
+            }
+        }
+        function listenKecamatan(value)
+        {
+            const check = kecamatan[value];
+
+            if(check)
+            {
+                query = check;
+            }
+            else
+            {
+                query = '';
+            }
+        }
+        function submit()
+        {
+            if(query == '')
+            {
+                alert('Data is not complete!');
+                return;
+            }
+            alert(`Pilihan anda ${provinsiList.value}, ${kotaList.value}, ${kecamatanList.value}`);
+        }
+    </script>
+</html>
